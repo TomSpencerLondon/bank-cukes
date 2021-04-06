@@ -16,7 +16,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 3,
-  "name": "I have deposited $100 in my account",
+  "name": "I have deposited $100.00 in my account",
   "keyword": "Given "
 });
 formatter.step({
@@ -34,14 +34,17 @@ formatter.match({
     {
       "val": "100",
       "offset": 18
+    },
+    {
+      "val": "00",
+      "offset": 22
     }
   ],
-  "location": "Steps.iHaveDeposited$InMyAccount(int)"
+  "location": "Steps.iHaveDeposited$InMyAccount(int,int)"
 });
 formatter.result({
-  "duration": 192813742,
-  "error_message": "java.lang.AssertionError: Incorrect account balance - expected:\u003c100\u003e but was:\u003c0\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat org.junit.Assert.assertEquals(Assert.java:555)\n\tat nicebank.Steps.iHaveDeposited$InMyAccount(Steps.java:15)\n\tat ✽.Given I have deposited $100 in my account(cash_withdrawal.feature:3)\n",
-  "status": "failed"
+  "duration": 204403169,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -53,7 +56,8 @@ formatter.match({
   "location": "Steps.iRequest$(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 111350,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -65,6 +69,8 @@ formatter.match({
   "location": "Steps.$ShouldBeDispensed(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1984064,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat nicebank.Steps.$ShouldBeDispensed(Steps.java:28)\n\tat ✽.Then $20 should be dispensed(cash_withdrawal.feature:5)\n",
+  "status": "pending"
 });
 });

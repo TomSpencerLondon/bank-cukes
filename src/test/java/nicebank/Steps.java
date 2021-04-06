@@ -6,10 +6,10 @@ import static org.junit.Assert.*;
 
 public class Steps {
 
-  @Given("^I have deposited \\$(\\d+) in my account$")
-  public void iHaveDeposited$InMyAccount(int amount) throws Throwable {
-      System.out.println("This is new");
+  @Given("^I have deposited \\$(\\d+)\\.(\\d+) in my account$")
+  public void iHaveDeposited$InMyAccount(int dollars, int cents) throws Throwable {
       Account myAccount = new Account();
+      Money amount = new Money(dollars, cents);
       myAccount.deposit(amount);
 
       assertEquals("Incorrect account balance -",
